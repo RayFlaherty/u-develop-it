@@ -12,12 +12,14 @@ app.get('/', (req, res) => {
     message: 'Hello World'
   });
 });
-// Add after Express middleware
-app.use('/api', apiRoutes);
-
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Add after Express middleware
+app.use('/api', apiRoutes);
+
+
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
@@ -27,4 +29,4 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-// module.exports = db;
+module.exports = db;

@@ -3,6 +3,8 @@
 
 module.exports = function(obj, ...props) {
   const errors = [];
+  // console.log(obj);
+  // console.log(props);
 
   props.forEach((prop) => {
     // if property is blank or doesn't exist, add to errors array
